@@ -1,0 +1,12 @@
+extends ./layout.jade
+block content
+
+    h1 #{title}
+    if errors
+        each err, i in errors
+            div.alert.alert-danger #{err.mas}
+    form(method = 'post', action = 'add')
+        .form-group
+            label Name
+            input.form-control(name = 'name', type = 'text', placeholder="name of category")
+        input.btn.btn-primary(type = 'submit', name= 'submit', value = 'Save') 

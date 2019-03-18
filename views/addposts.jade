@@ -1,0 +1,33 @@
+extends ./layout.jade
+
+
+block content
+    h2.page-header Add posts
+    //- p Please register using form below
+    if errors
+        each err, i in errors
+            div.alert.alert-danger #{err.mas}
+    form(method = 'post', action = 'add', enctype = 'multipart/form-data')
+        .form-group
+            label Title
+            input.form-control(name = 'title', type = 'text', placeholder="Title")
+        .form-group
+            label Category
+            select.form-control(name='category')
+                each category, i in categories 
+                    option(value='#{category.name}') #{category.name}
+        .form-group
+            label Body
+            textarea.form-control(name = 'body' , placeholder="Post content")
+        .form-group
+            label Main Image 
+            input.form-control(name = 'mainimage', type = 'file', placeholder="Confirm your password")
+        .form-group
+            label Author
+            select.form-control(name='author')
+                option(value='Brad Traversy') Brad Traversy
+                option(value='Jon Doe') Jon Doe
+        input.btn.btn-primary(type = 'submit', name= 'submit', value = 'Save') 
+        script(src='/ckeditor/ckeditor.js')
+        script.
+            CKEDITOR.replace('body');

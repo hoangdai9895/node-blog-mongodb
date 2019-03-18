@@ -1,0 +1,26 @@
+{
+    "name": "node-blog",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "nodemon ./bin/www"
+    },
+    "dependencies": {
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "~1.4.3",
+        "debug": "~2.6.9",
+        "express": "~4.16.0",
+        "express-messages": "^1.0.1",
+        "express-validator": "^5.3.1",
+        "http-errors": "~1.6.2",
+        "jade": "~1.11.0",
+        "moment": "^2.24.0",
+        "mongodb": "^3.1.13",
+        "monk": "^6.0.6",
+        "morgan": "~1.9.0",
+        "multer": "^1.4.1"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.10"
+    }
+}
